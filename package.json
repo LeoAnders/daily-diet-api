@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "knex": "node --no-warnings --import tsx ./node_modules/.bin/knex",
-    "lint": "eslint src --ext .ts"
+    "knex:migrate:latest": "npm run knex -- migrate:latest",
+    "knex:migrate:rollback": "npm run knex -- migrate:rollback",
+    "knex:migrate:make": "npm run knex -- migrate:make"
   },
-  "author": "",
+  "author": "Leonardo Anders",
   "license": "ISC",
   "description": "",
   "devDependencies": {
@@ -19,6 +21,7 @@
     "typescript": "5.7.2"
   },
   "dependencies": {
+    "bcryptjs": "2.4.3",
     "dotenv": "16.4.7",
     "fastify": "5.2.0",
     "knex": "3.1.0",
